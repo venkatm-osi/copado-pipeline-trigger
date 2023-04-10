@@ -1,4 +1,4 @@
-def lambda_handler(event, context):
+def lambda_handler(event1, context):
     import json
 
     requestedPipeline = event["message"][0]["keyword"]
