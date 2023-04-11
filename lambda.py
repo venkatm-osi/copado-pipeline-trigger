@@ -9,12 +9,12 @@ def lambda_handler(event, context):
             returnCode = start_code_pipeline(requestedPipeline)
             return {
                 "statusCode": 200,
-                "body": requestedPipeline,
+                "message": "Pipeline named '" +requestedPipeline+"' is triggered now",
             }
     except Exception as e:
         return {
-            "statusCode": 400,
-            "body": str(e),
+            "statusCode": 204,
+            "message": "Pipeline named '" +requestedPipeline+ "' does not exist here",
         }
 
 def start_code_pipeline(pipelineName):
